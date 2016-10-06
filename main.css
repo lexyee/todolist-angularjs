@@ -10,6 +10,7 @@
 *  light-gray:  #f3f3f3
 *  light-font:  #dcdcdc
 *  bright-green: #58e1a4
+*  dark-red:    #c78181
 *  
 *  
 ************************/
@@ -166,6 +167,10 @@ input[type="checkbox"]:checked::after{
   text-align: center;
 }
 
+.item-clear button{
+  color: #c78181;  
+}
+
 
 
 /***********************
@@ -178,7 +183,10 @@ footer{
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 1em;
+  bottom: 0;
+  padding-bottom: 1em;
+  background-color: #fff;
+  z-index: 2;
 }
 
 .item-new{
