@@ -4,7 +4,7 @@
 // author: lexyee
 // version: 1.0
 // description: 
-// A simple todo-list using angularJS with a single controller, supporting localStorage.
+// A simple todo-list using angularJS, supporting localStorage.
 //
 // 
 //////////////////////////////
