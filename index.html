@@ -10,11 +10,15 @@ version: 1.0
 <html ng-app='list'>
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="sharecontent" data-msg-img="favicon.jpeg" data-msg-title="Gotta Do" data-msg-content="A simple todo list app" data-msg-callBack="" data-line-img="favicon.jpeg" data-line-title="Gotta Do" data-line-callBack=""/>  
 
 	<title>Gotta Do</title>
 	<link rel="stylesheet" href="normalize.css" />
 	<link rel="stylesheet" href="main.css" />
+	<script src="angular.min.js"></script>
 	
 </head>
 <body class="clean" ng-controller="ControlItems as list">
@@ -80,7 +84,7 @@ version: 1.0
 			
 			<form class="item-new" novalidate>
 				<input id="new-item-text" type="text" ng-model="list.newItemText" required>
-				<label for="new-item-text">Add New Item</label>
+				<label for="new-item-text">I gotta do..</label>
 				
 				<button  ng-class="{enabled:list.newItemText!=null, disabled:list.newItemText==null}" ng-click="list.addItem()"></button>
 			</form>
@@ -89,7 +93,7 @@ version: 1.0
 		
 	</footer>
 
-	<script src="angular.min.js"></script>
+	
 	<script src="app.js"></script>
 </body>
 </html>
