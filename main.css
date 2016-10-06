@@ -161,7 +161,7 @@ input[type="checkbox"]:checked::after{
 	width: 100%;
   border: none;
   background: none;
-  color: #f3f3f3;
+  color: #d8d8d8;
   margin: 20px 0;
   padding: 10px 0;	
   text-align: center;
