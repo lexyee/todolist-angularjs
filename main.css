@@ -1,0 +1,286 @@
+/***********************
+*  
+*  author: lexyee
+*  version: 1.0
+*  
+*  color scheme
+*  
+*  dark-gray:   #565656
+*  medium-gray: #a7a7a7
+*  light-gray:  #f3f3f3
+*  light-font:  #dcdcdc
+*  bright-green: #58e1a4
+*  
+*  
+************************/
+
+
+/***********************
+*  
+*  base
+*  
+************************/
+
+body{
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 16px;
+	line-height: 1.2;
+	color: #565656;
+	padding-bottom: 60px;
+}
+
+button, input{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+button:focus, input:focus{
+	outline: none;
+}
+
+.container{
+	width: 70%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+/***********************
+*  
+*  header
+*  
+************************/
+
+.date{
+	height: 80px;
+	
+}
+
+.date-details-wrapper{
+	float: left;
+}
+
+.date-week-wrapper {
+	float: right;
+}
+
+.date-week{
+	height: 20px;
+	line-height: 20px;
+	font-size: .7em;
+	margin-top: 30px;
+	text-transform: uppercase;
+}
+
+
+.date-date, .date-details aside{
+	float: left;
+	height: 40px;
+	margin-top: 20px;
+	
+}
+
+.date-date{
+	font-size: 2em;
+	line-height: 40px;
+}
+
+.date-details aside{
+  margin-top: 28px;
+  margin-left: 10px;
+	font-size: .7em;
+  line-height: 1.2;
+}
+
+.date-year{
+	font-weight: lighter;
+}
+
+
+/***********************
+*  
+*  main
+*  
+************************/
+
+.item{
+	position: relative;
+  padding: 10px 2px;
+  line-height: 24px;
+  animation: show-item .5s;
+  /*-webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;*/
+}
+
+.item label{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.item.checked{
+  color: #dcdcdc;
+}
+
+.item-text {
+	float: left;
+}
+
+.item-action{
+	float: right;
+	height: 24px;
+}
+
+input[type="checkbox"]{
+  border: 2px solid #f3f3f3;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked{
+	border: none;
+}
+
+
+input[type="checkbox"]:checked::after{
+  content: '✔️';
+  margin-left: 3px;
+  font-size: 1.2em;
+  opacity: 0.2;
+}
+
+.item-clear button,
+.item-clear .emptyholder{
+	width: 100%;
+  border: none;
+  background: none;
+  color: #f3f3f3;
+  margin: 20px 0;
+  padding: 10px 0;	
+  text-align: center;
+}
+
+
+
+/***********************
+*  
+*  footer
+*  
+************************/
+
+footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 1em;
+}
+
+.item-new{
+	position: relative;
+  height: 40px;
+  margin-top: 20px;
+}
+
+
+.item-new input[type="text"]{
+  float: left;
+  width: 70%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 40px;
+  color: #d8d8d8;
+  font-size: 1.2em;
+  box-sizing: border-box;
+}
+
+.item-new input[type="text"] + label[for="new-item-text"]{
+  color: #d8d8d8;
+  font-size: 1.2em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+}
+
+.item-new input[type="text"]:focus + label[for="new-item-text"]{
+  top: 0;
+  transform-origin: center left;
+  transform: translateY(-100%) scale(0.7);
+}
+
+
+.item-new button{
+  float: right;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px 0px #a7a7a7;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+}
+
+.item-new button.enabled{
+	background-color: #58E1A4;
+}
+
+.item-new button.disabled{
+	background-color: #f3f3f3;
+}
+
+
+.item-new button::after{
+  content: '＋';
+  color: #f3f3f3;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.item-new button.disabled::after{
+	color: #a7a7a7;
+}
+
+
+/***********************
+*  
+*  clearfix
+*  
+************************/
+
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  z-index: 1; /* for IE6&7 */
+}
+
+
+/***********************
+*  
+*  animation
+*  
+************************/
+
+
+@keyframes show-item{
+	0% {visibility: hidden; opacity: 0;}
+	100% {visibility: visible; opacity: 1;}
+}

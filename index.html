@@ -1,0 +1,95 @@
+<!-- 
+
+author: lexyee
+version: 1.0
+
+-->
+
+<!DOCTYPE html>
+
+<html ng-app='list'>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>todo list using angular!</title>
+	<link rel="stylesheet" href="normalize.css" />
+	<link rel="stylesheet" href="main.css" />
+	
+</head>
+<body class="clean" ng-controller="ControlItems as list">
+	<header>
+		<div class="container date clearfix" ng-controller="ControlDates as dates">
+			<div class="date-details-wrapper">
+				<div class="date-details">
+					<div class="date-date">
+						{{dates.d}}
+					</div>
+					<aside>						
+						<div class="date-month">
+							{{dates.m}}
+						</div>
+						<div class="date-year">
+							{{dates.y}}
+						</div>
+					</aside>
+					
+					
+				</div>
+			</div>
+			<div class="date-week-wrapper">
+				<div class="date-week">
+					{{dates.w}}	
+				</div>
+				
+			</div>
+		</div>
+		
+		<!-- <p class="welcome" ng-bind="list.welcome_text">
+		</p>
+		 -->
+	</header>
+	
+	<main>
+		<div class="container">
+			<div ng-repeat="item in list.items track by $index">
+				<div class="item clearfix" ng-class="{checked:item.checked}">
+					<div class="item-text">
+						{{item.content}}
+					</div>
+					<div class="item-action">
+						<label for="todo-{{$index}}" ></label>					
+						<input id="todo-{{$index}}" type="checkbox" ng-model="item.checked">
+					</div>
+				</div>
+			</div>
+
+			<div class="item-clear">
+				<button ng-click="list.clearAll()" ng-show="list.items.length > 0">Clear All</button>
+				<div class="emptyholder" ng-show="list.items.length <= 0">Nice Day!</div>
+			</div>
+
+
+			
+		</div>
+		
+	</main>
+
+	<footer>
+		<div class="container">
+			
+			<form class="item-new" novalidate>
+				<input id="new-item-text" type="text" ng-model="list.newItemText" required>
+				<label for="new-item-text">Add New Item</label>
+				
+				<button  ng-class="{enabled:list.newItemText!=null, disabled:list.newItemText==null}" ng-click="list.addItem()"></button>
+			</form>
+		</div>
+			
+		
+	</footer>
+
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
