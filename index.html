@@ -14,8 +14,10 @@ version: 1.0
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="sharecontent" data-msg-img="favicon.jpeg" data-msg-title="Gotta Do" data-msg-content="A simple todo list app" data-msg-callBack="" data-line-img="favicon.jpeg" data-line-title="Gotta Do" data-line-callBack=""/>  
+	<meta name="description" content="A Simple Todo App">
 
 	<title>Gotta Do</title>
+
 	<link rel="stylesheet" href="normalize.css" />
 	<link rel="stylesheet" href="main.css" />
 	<script src="angular.min.js"></script>
@@ -70,7 +72,7 @@ version: 1.0
 
 			<div class="item-clear">
 				<button ng-click="list.clearAll()" ng-show="list.items.length > 0">Clear All</button>
-				<div class="emptyholder" ng-show="list.items.length <= 0">Nice Day!</div>
+				<div class="emptyholder" ng-show="list.items.length <= 0">Finally you got nothing to do.</div>
 			</div>
 
 
